@@ -1,0 +1,42 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            credentials {
+                username '604f2d19c7ac6c1468f3f898'
+                password 'qJ3nL4PRwhg3'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2084467-release-CdI08Y/'
+        }
+        maven {
+            credentials {
+                username '604f2d19c7ac6c1468f3f898'
+                password 'qJ3nL4PRwhg3'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2084467-snapshot-fniveT/'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
